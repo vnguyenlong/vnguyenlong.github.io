@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Search for weather</h3>
+            <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation"
+                        placeholder="Please input a Location" formControlName="location" />
+                </div>
+                <div class="text-center">
+                    <button typee="submit" class="btn btn-success btn-md my-3">Search for weather</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Weather Details:</h3>
+            <!-- <p class="text-center"> {{this.weatherData?.current.condition.text}}</p>
+            <p class="text-center"> {{this.weatherData?.current.temp_c}}</p>
+            <p class="text-center"> {{this.weatherData?.current.temp_f}}</p>
+            <p class="text-center">Feels like in Degrees Celsius: {{this.weatherData?.current.feelslike_c}}</p>
+            <p class="text-center">Feels like in Degrees Farenheit: {{this.weatherData?.current.feelslike_f}}</p>
+            <p class="text-center">Location Searched: {{this.weatherData?.location.name}},
+                {{this.weatherData?.location.country}}</p> -->
+                <p class="text-center">Quốc Gia: {{this.weatherData?.location.country}}</p>
+                <p class="text-center">Vĩ Độ: {{this.weatherData?.location.lat}}</p>
+                <p class="text-center">Giờ Địa Phương: {{this.weatherData?.location.localtime}}</p>
+                <p class="text-center">Múi Giờ: {{this.weatherData?.location.timezone_id}}</p>
+                <p class="text-center">Thành Phố: {{this.weatherData?.location.name}}</p>
+                <p class="text-center">Nhiệt Độ: {{this.weatherData?.current.temperature}}</p>
+                <p class="text-center">Mưa: {{this.weatherData.current.precip}}</p>
+                <!-- country: "China"
+lat: "39.929"
+localtime: "2021-07-30 12:28"
+localtime_epoch: 1627648080
+lon: "116.388"
+name: "Beijing"
+region: "Beijing"
+timezone_id: "Asia/Shanghai" -->
+        </div>
+
+    </div>
+</div>
